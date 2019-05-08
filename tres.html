@@ -43,8 +43,28 @@
        ingreso: 2016,
        trabajos: [
        {titulo:"Sazon",imagen:"https://raw.githubusercontent.com/IsidoraMorande/ev2/gh-pages/img/trabajo-1.jpg"},
-       {titulo:"The Cookie Factory",imagen:"https://raw.githubusercontent.com/IsidoraMorande/ev2/master/img/trabajo-2.jpg"},
-       {titulo:"Al Seco",imagen:"https://raw.githubusercontent.com/IsidoraMorande/ev2/master/img/trabajo-3.jpg"},
+       {titulo:"The Cookie Factory",imagen:"https://raw.githubusercontent.com/IsidoraMorande/ev2/gh-pages/img/trabajo-2.jpg"},
+       {titulo:"Al Seco",imagen:"https://raw.githubusercontent.com/IsidoraMorande/ev2/gh-pages/img/trabajo-3.jpg"},
+       ]
+
+    },
+
+    {nombre:"Francisca Lopez de Heredia",
+       ingreso: 2016,
+       trabajos: [
+       {titulo:"Diseño de producto",imagen:"https://raw.githubusercontent.com/IsidoraMorande/ev2/gh-pages/img/trabajo-1.jpg"},
+       {titulo:"Branding",imagen:"https://raw.githubusercontent.com/Franciscaldeh/ev2/gh-pages/img/img2.jpg"},
+       {titulo:"Modelado 3D",imagen:"https://raw.githubusercontent.com/Franciscaldeh/ev2/gh-pages/img/img3.jpg"},
+       ]
+
+    },
+
+    {nombre:"Dominga Zañartu",
+       ingreso: 2016,
+       trabajos: [
+       {titulo:"La Guacha",imagen:"https://raw.githubusercontent.com/domingazanartu/ev2/gh-pages/IMG/trabajo-1.jpg"},
+       {titulo:"Cervezas +56",imagen:"https://raw.githubusercontent.com/domingazanartu/ev2/gh-pages/IMG/trabajo-2.jpg"},
+       {titulo:"Cad cam",imagen:"https://raw.githubusercontent.com/domingazanartu/ev2/gh-pages/IMG/trabajo-3.jpg"},
        ]
 
     }
@@ -52,7 +72,18 @@
     ]
 
 
-      $("#cuestiones").append('<h2>'+curso[0].nombre+'<h2>').append('<h4>' + curso[0].ingreso + '<h4>').append('<img src="' + curso[0].trabajos[0].imagen + '">');
+     
+
+    $.each(curso, function(i, integrante) {
+            $("#cuestiones").append("<h2 class ='mt-5 bg-azul text-white'>" + integrante.nombre + "</h2>");
+          $.each(integrante.trabajos, function(i, trabajo) {
+              $("#cuestiones").append("<h5 class='border-top my-2 py-3'>" + trabajo.titulo + "</h5>").append("<img src='" + trabajo.imagen + "'class='img-fluid border-botton pb-3 mb-3'>");
+          });
+        });
+      
+
+
+
     </script>
   </body>
 </html>
